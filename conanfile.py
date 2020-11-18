@@ -101,7 +101,4 @@ class LibpngConan(ConanFile):
         if self.settings.build_type == "Debug" and not (self.settings.os == "Windows" and self.settings.compiler == "gcc"):
             self.cpp_info.libs[0] += "d"
 
-    def conan_info(self): # https://github.com/conan-io/conan/issues/212
-        if self.settings.compiler == "gcc" or self.settings.compiler == "clang":  # or3 self.settings.os != "Windows" or the like
-            self.info.settings.build_type = None # Make gcc to be all Release packages linkable to Debug too
 
